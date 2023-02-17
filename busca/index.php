@@ -38,6 +38,8 @@
                 <th>Marca</th>
                 <th>Ano</th>
                 <th>Nome</th>
+                <th>KM Rodado </th>
+                <th>Link da Loja </th>
             </tr>
             <?php if(!isset($_GET['busca'])) {
 
@@ -49,7 +51,7 @@
             } else {
 
                 $pesquisa = $mysqli->real_escape_string($_GET['busca']);
-                $sql_code = "SELECT * FROM veiculos WHERE nome LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR ano LIKE '%$pesquisa%'";
+                $sql_code = "SELECT * FROM veiculos WHERE nome LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR ano LIKE '%$pesquisa%' OR rodado LIKE '%$pesquisa%' OR loja LIKE '%$pesquisa%'";
     
                 $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error);
 
@@ -67,6 +69,8 @@
                         <td> <?php echo $dados['marca']; ?></td>
                         <td> <?php echo $dados['ano']; ?></td>
                         <td> <?php echo $dados['nome']; ?></td>
+                        <td> <?php echo $dados['rodado']; ?></td>
+                        <td><a href="<?php echo $dados['loja']; ?>"> <?php echo $dados['loja']; ?> </a></td>
                     </tr>
                     <?php
                 } 

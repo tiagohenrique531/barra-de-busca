@@ -68,3 +68,28 @@ span { font-size: 1.5em;
   width:30px;
   
 }
+
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+table {
+  margin-top: 50px;
+  text-align: center;
+  align-items: center;
+}
